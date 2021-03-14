@@ -16,60 +16,60 @@ function setup() {
 	rectMode(CENTER);
 	
 	var box_options ={
-		isStatic: true
-	}
-	
-	
+        isStatic: true
+    }
+
 	packageSprite=createSprite(width/2, 80, 10,10);
 	packageSprite.addImage(packageIMG)
 	packageSprite.scale=0.2
-	
+
 	helicopterSprite=createSprite(width/2, 200, 10,10);
 	helicopterSprite.addImage(helicopterIMG)
 	helicopterSprite.scale=0.6
-	
+
 	groundSprite=createSprite(width/2, height-17.5, width,40);
 	groundSprite.shapeColor=color("green")
-	
+
+
 	engine = Engine.create();
 	world = engine.world;
-	
+
 	//Create a Ground
 	ground = Bodies.rectangle(width/2, 650, width, 10 , {isStatic:true} );
-	World.add(world, ground);
-	packageBody = Bodies.circle(width/2 , 200 , 5 , {restitution:0.5, box_options});
+ 	World.add(world, ground);
+packageBody = Bodies.circle(width/2 , 200 , 5 , {restitution:0.5, box_options});
 	World.add(world, packageBody);
-	
+
 	Engine.run(engine);
-	fill("red")
-	
-	redzone1 = Bodies.rectangle(width/2, 650, 200, 20 , {isStatic:true} );
-	World.add(world, redzone1);
-	
-	redzone2 = Bodies.rectangle(width/2 - 100, 610, 20, 100 , {isStatic:true} );
-	World.add(world, redzone1);
-	
-	redzone3 = Bodies.rectangle(width/2 + 100, 610, 20, 100 , {isStatic:true} );
-	World.add(world, redzone1);
-	
+   fill("red")
+
+   redzone1 = Bodies.rectangle(width/2, 650, 200, 20 , {isStatic:true} );
+   World.add(world, redzone1);
+
+   redzone2 = Bodies.rectangle(width/2 - 100, 610, 20, 100 , {isStatic:true} );
+   World.add(world, redzone1);
+
+   redzone3 = Bodies.rectangle(width/2 + 100, 610, 20, 100 , {isStatic:true} );
+   World.add(world, redzone1);
+  
 }
 
 
 function draw() {
-	rectMode(CENTER);
-	background("darkblue");
-	
-	packageSprite.x= packageBody.position.x 
-	packageSprite.y= packageBody.position.y 
-	fill("red")
-	
-	rect(redzone1.position.x,redzone1.position.y,200,20);
-	rect(redzone2.position.x,redzone2.position.y,20,100);
-	rect(redzone3.position.x,redzone3.position.y,20,100);
-	
-	
-	
-	
+  rectMode(CENTER);
+  background("darkblue");
+  
+ packageSprite.x= packageBody.position.x 
+  packageSprite.y= packageBody.position.y 
+  fill("red")
+  
+  rect(redzone1.position.x,redzone1.position.y,200,20);
+  rect(redzone2.position.x,redzone2.position.y,20,100);
+  rect(redzone3.position.x,redzone3.position.y,20,100);
+
+
+
+
  
   drawSprites();
 }
