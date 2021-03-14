@@ -27,6 +27,9 @@ function setup() {
 	groundSprite=createSprite(width/2, height-17.5, width,40);
 	groundSprite.shapeColor=color("green")
 	
+	var box_options ={
+		isStatic: true
+	}
 	
 	engine = Engine.create();
 	world = engine.world;
@@ -67,9 +70,6 @@ function draw() {
 	
 	
 	
-	var box_options ={
-		isStatic: true
-	}
  
   drawSprites();
 }
