@@ -15,10 +15,10 @@ function setup() {
 	createCanvas(800, 700);
 	rectMode(CENTER);
 	
+	
 	var box_options ={
         isStatic: true
     }
-
 	packageSprite=createSprite(width/2, 80, 10,10);
 	packageSprite.addImage(packageIMG)
 	packageSprite.scale=0.2
